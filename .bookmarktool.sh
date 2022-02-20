@@ -5,9 +5,9 @@ BOOKMARKS_FILE=".bookmark.list"
 # Checking if the file where all the bookmark entries exists
 # If it doesn't, it will create such file under the /tmp/ directory
 
-if [ ! -w ${BOOKMARKS_FILE} ]; then
+if [ ! -w ~/${BOOKMARKS_FILE} ]; then
 	echo "bookmark list created"
-	touch $BOOKMARKS_FILE
+	touch ~/$BOOKMARKS_FILE
 fi
 
 # Checking if .bashrc file already contains the script for automatical use upon
@@ -36,7 +36,7 @@ function bm(){
 	# Aux function to check if a bookmark entry already exists
 
 	function isFound(){
-		grep -q "${BOOKMARK_NAME}:" ${BOOKMARKS_FILE}
+		grep -q "${BOOKMARK_NAME}:" ~/${BOOKMARKS_FILE}
 		
 		if [ $? -eq 0 ]; then
 			return 0
@@ -54,7 +54,7 @@ function bm(){
 
 		if [ $? -ne 0 ]; then
 			echo "Creating Entry for the bookmark $BOOKMARK_NAME"
-			echo "${BOOKMARK_NAME}:${BOOKMARK_PATH}:${VISIT_COUNT}" >> ${BOOKMARKS_FILE}
+			echo "${BOOKMARK_NAME}:${BOOKMARK_PATH}:${VISIT_COUNT}" >> ~/${BOOKMARKS_FILE}
 			return 0
 		else
 			echo "Entry Already Exists"
@@ -72,7 +72,7 @@ function bm(){
 			return 1
 		else
 			echo "Removing the ${BOOKMARK_NAME} entry"
-			sed -i /${BOOKMARK_NAME}:/d ${BOOKMARKS_FILE}
+			sed -i /${BOOKMARK_NAME}:/d ~/${BOOKMARKS_FILE}
 			return 0
 		fi
 	# Lists in a formatted form the containts of bookmark.list
@@ -80,7 +80,7 @@ function bm(){
 
 	elif [[ $1 = $LIST && $# -eq 1 ]]; then
 
-		if [ ! -s $BOOKMARKS_FILE ]; then
+		if [ ! -s ~/$BOOKMARKS_FILE ]; then
 			echo "File is empty"
 			return 1
 		else
@@ -95,7 +95,7 @@ function bm(){
 				VISITS=${ARR[2]}
 
 				echo "Name:${NAME} -----> Path:${BMARK_PATH} -----> Visits:${VISITS}"
-			done < ${BOOKMARKS_FILE}
+			done < ~/${BOOKMARKS_FILE}
 			return 0
 		fi
 	# Shows a specific bookmark entry, if it exists
@@ -109,7 +109,7 @@ function bm(){
 			echo "Entry not Found"
 			return 1
 		else
-			sed -n -e /${BOOKMARK_NAME}:/p ${BOOKMARKS_FILE}
+			sed -n -e /${BOOKMARK_NAME}:/p ~/${BOOKMARKS_FILE}
 			return 0
 		fi
 	# Appends the specific bookmark entry by incrementing the number of visits by 1
@@ -124,7 +124,7 @@ function bm(){
 			echo "Entry not Found"
 			return 1
 		else
-			LINE=$(sed -n -e /${BOOKMARK_NAME}:/p ${BOOKMARKS_FILE})
+			LINE=$(sed -n -e /${BOOKMARK_NAME}:/p ~/${BOOKMARKS_FILE})
 
 			IFS=":"
 
@@ -141,7 +141,7 @@ function bm(){
 				#echo "$LINE"
 				#echo "$N_LINE"
 
-				sed -i "s|${LINE}|${N_LINE}|g" $BOOKMARKS_FILE	
+				sed -i "s|${LINE}|${N_LINE}|g" ~/$BOOKMARKS_FILE	
 				cd "$BM_PATH"
 				return 0
 			else
