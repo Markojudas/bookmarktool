@@ -14,7 +14,7 @@ Download the script into your $HOME directory and run.
 
 This will create a file `.bookmark.list` that will keep track of the created bookmarks and keep a count of time you have visited each bookmark.
 
-This will also modify your `.bashrc` file appending to block below so the tool is available after booting up.
+This will also modify your `.bashrc` file appending the block below so the tool is available after booting up.
 
 ```bash
 if [ -f ~/.bookmarktool.sh ]; then
