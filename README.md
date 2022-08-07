@@ -2,7 +2,7 @@
 
 # Markojudas' Bash Bookmark Tool
 
-This is very simple bookmark tool for the easy navigation through the terminal of directories visited most visited.
+This is very simple bookmark tool for the easy navigation through the terminal of the most used directories.
 
 ## Install
 
