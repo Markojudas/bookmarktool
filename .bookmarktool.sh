@@ -157,14 +157,14 @@ function bm(){
 		echo "Please make sure the script is stored in the user's home directory. /home/<user>"
 		echo ""
 		echo "Usage:"
-		echo "bookmark [OPTION] [name-of-bookmark] [path-to-directory]"
+		echo "bm [OPTION] [name-of-bookmark] [path-to-directory]"
 		echo ""
 		echo "OPTIONS"
 		echo "-c [create]			[name-of-bookmark] [path-to-directory]"
 		echo "-r [remove]			[name-of-bookmark]"
 		echo "-l [list]"
 		echo "-s [show]			[name-of-bookmark]"
-		echo "-v [visti]			[name-of-bookmark]"
+		echo "-v [visit]			[name-of-bookmark]"
 				
 		return 1
 
