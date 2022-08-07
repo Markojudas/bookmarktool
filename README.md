@@ -18,7 +18,7 @@ This will also modify your `.bashrc` file appending the block below so the tool 
 
 ```bash
 if [ -f ~/.bookmarktool.sh ]; then
-		. ~/.bookmarktool.sh
+	. ~/.bookmarktool.sh
 fi
 ```
 
