@@ -9,6 +9,10 @@ This is very simple bookmark tool for the easy navigation through the terminal o
 Download the script into your $HOME directory and run.
 
 ```bash
+wget https://github.com/Markojudas/bookmarktool/blob/main/.bookmarktool.sh
+```
+
+```bash
 ./.bookmarktool.sh
 ```
 
