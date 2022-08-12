@@ -10,6 +10,7 @@ Download the script into your $HOME directory and run.
 
 ```bash
 wget https://github.com/Markojudas/bookmarktool/blob/main/.bookmarktool.sh
+sudo chmod a+x .bookmarktool.sh
 ```
 
 ```bash
