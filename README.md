@@ -6,11 +6,10 @@ This is very simple bookmark tool for the easy navigation through the terminal o
 
 ## Install
 
-Download the script into your $HOME directory and run.
-
 ```bash
-wget https://github.com/Markojudas/bookmarktool/blob/main/.bookmarktool.sh
-sudo chmod a+x .bookmarktool.sh
+git clone https://github.com/Markojudas/bookmarktool.git
+cd bookmarktool
+mv .bookmarktool ~/
 ```
 
 ```bash
